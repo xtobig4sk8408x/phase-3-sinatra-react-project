@@ -1,134 +1,55 @@
-# Phase 3 Project Guidelines
+# Welcome to Dad Jokes! A place to just find dad jokes to annoy the people around you!
 
-## Learning Goals
+> To view in VSCode, right click on the README.md file and select "Open Preview".
 
-- Build a web basic API with Sinatra and Active Record to support a React
-  frontend
+## Setup
 
-## Introduction
+### To get started:
 
-Congrats on getting through all the material for Phase 3! Now's the time to put
-it all together and build something from scratch to reinforce what you know and
-expand your horizons.
+The link for the repository for the front-end is here: [https://github.com/xtobig4sk8408x/phase-3-project-react-frontend](https://github.com/xtobig4sk8408x/phase-3-project-react-frontend)
 
-The focus of this project is **building a Sinatra API backend** that uses
-**Active Record** to access and persist data in a database, which will be used
-by a separate **React frontend** that interacts with the database via the API.
+The link for the repository for the back-end is here: [https://github.com/xtobig4sk8408x/phase-3-sinatra-react-project](https://github.com/xtobig4sk8408x/phase-3-sinatra-react-project)
 
-## Requirements
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.Ensure that you have both the frontend and the backend files downloaded<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.In the backend directory, run the command: <span style="color:#83AAF1">bundle install</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.Once that command finishes running, in the same terminal, run the command: <span style="color:#83AAF1">rake server</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Now go back to ubuntu and navigate to the frontend <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.In the frontend run the command: <span style="color:#83AAF1">npm install</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.Once the terminal finishes it's processes, run the command: <span style="color:#83AAF1">npm start</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.The website should open onto your browser automatically. If not, you can navigate to the page by entering the address where the frontend server has started. By default, this is: [http://localhost:3000/](http://localhost:3000/)<br>
 
-For this project, you must:
+## What is it:
 
-- Use Active Record to interact with a database.
-- Have at least two models with a one-to-many relationship.
-- At a minimum, set up the following API routes in Sinatra:
-  - create and read actions for both models
-  - full CRUD capability for one of the models
-- Build a separate React frontend application that interacts with the API to
-  perform CRUD actions.
-- Implement proper front end state management. You should be updating state using a
-  setState function after receiving your response from a POST, PATCH, or DELETE 
-  request. You should NOT be relying on a GET request to update state. 
-- Use good OO design patterns. You should have separate classes for each of your
-  models, and create instance and class methods as necessary. 
-- Routes in your application (both client side and back end) should follow RESTful
-  conventions.
-- Use your back end optimally. Pass JSON for related associations to the front 
-  end from the back end. You should use active record methods in your controller to grab
-  the needed data from your database and provide as JSON to the front end. You
-  should NOT be relying on filtering front end state or a separate fetch request to
-  retrieve related data.
+A basic application that was meant to allow you to scroll through and read through dad jokes. If you create a user account on the website it would allow you to comment and rate each joke with the option to edit and delete your rating. You also have the option of adding a dad joke to the database, editing your own joke, and deleting your own joke. So far we only have the CRUD part of the jokes. The application was also created in hopes of creating data of which jokes people enjoy more and which jokes aren't enjoyed as much
 
-For example, build a todo list application with a React frontend interface and a
-Sinatra backend API, where a user can:
+## The Tools Used:
 
-- **Create** a new todo
-- **Read** a list of all todos
-- **Update** an individual todo
-- **Delete** a todo
+is a representation of what can be done when working with languages:_Ruby_  and _React_ using _Active Record_, _Sinatra_, _JavaScript_, _HTML_, and _CSS_. This web-based application utilizes several tools and features from these languages including _associations_,  _DOM/Server communication_, _routing_ and more.
 
-A `Todo` can be tagged with a `Category`, so that each todo _belongs to_ a
-category and each category _has many_ todos.
+<!-- Insert GIF -->
 
-## Getting Started
+When users open up the application they are greeted by the home page which displays a navigation bar, the store banner, and then all of the products we have available listed below. In the NavBar, the user can then elect to sign in or sign up, they will then be introduced to a login form that is changable to a sign in form if the user does not already have an account, and vice-versa. For account creation to work, the user must meet certain account creation requirements. Once those requirements are met, the new users data is stored within our Ruby database and passwords go through a process with _bcrypt_ and _dotenv_ where their passwords are salted and hashed, making it much more difficult for unauthorized users to gain acess to their account information.
 
-### Backend Setup
+## The dad jokes webpage
 
-This repository has all the starter code needed to get a Sinatra backend up and
-running. [**Fork and clone**][fork link] this repository to get started. Then, run
-`bundle install` to install the gems.
+is a project made by Harinder Singh & John Josef. Students of Flatiron school that made this project for Phase 3.
 
-**Important**: Be sure you fork a copy of the repo into your GitHub account
-before cloning it. You can do this by using the link above or by clicking the
-"Octocat" button at the top of this page, then clicking "Fork" in the upper
-right corner of the repo page.
+## License
 
-[fork link]: https://github.com/learn-co-curriculum/phase-3-sinatra-react-project/fork
-
-The `app/controllers/application_controller.rb` file has an example GET route
-handler. Replace this route with routes for your project.
-
-You can start your server with:
-
-```console
-$ bundle exec rake server
-```
-
-This will run your server on port
-[http://localhost:9292](http://localhost:9292).
-
-### Frontend Setup
-
-Your backend and your frontend should be in **two different repositories**.
-
-Create a new repository in a **separate folder** with a React app for your
-frontend. To do this, `cd` out of the backend project directory, and use
-[create-react-app][] to generate the necessary code for your React frontend:
-
-```console
-$ npx create-react-app my-app-frontend
-```
-
-After creating the project locally, you should also
-[create a repository on GitHub][create repo] to host your repo and help
-collaborate, if you're working with a partner.
-
-### Fetch Example
-
-Your React app should make fetch requests to your Sinatra backend! Here's an
-example:
-
-```js
-fetch("http://localhost:9292/test")
-  .then((r) => r.json())
-  .then((data) => console.log(data));
-```
-
-## Project Tips
-
-- This project is intended to focus more on the backend than the frontend, so
-  try and keep the React side of things relatively simple. Focus on working with
-  Active Record and performing CRUD actions. What are some interesting queries you can write? What kinds of questions can you ask of your data?
-- Once you have a project idea, come up with a domain model and decide what
-  relationships exist between the models in your application. Use a tool like
-  [dbdiagram.io][] to help visualize your models.
-- Decide on your API endpoints. What data should they return? What kind of CRUD
-  action should they perform? What data do they need from the client?
-- Use [Postman][postman download] to test your endpoints.
-- Use `binding.pry` to debug your requests on the server. It's very helpful to use a
-  `binding.pry` in your controller within a route to see what `params` are being
-  sent.
-- Use the [Network Tab in the Dev Tools][network tab] in the frontend to debug
-  your requests.
-
-## Resources
-
-- [create-react-app][]
-- [dbdiagram.io][]
-- [Postman][postman download]
-
-[create-react-app]: https://create-react-app.dev/docs/getting-started
-[create repo]: https://docs.github.com/en/get-started/quickstart/create-a-repo
-[dbdiagram.io]: https://dbdiagram.io/
-[postman download]: https://www.postman.com/downloads/
-[network tab]: https://developer.chrome.com/docs/devtools/network/
+MIT License
+Copyright (c) 2023 xtobig4sk8408x/harinderovo
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

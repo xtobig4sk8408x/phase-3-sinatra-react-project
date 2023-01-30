@@ -10,10 +10,9 @@ Joke.destroy_all
 #Create 20 random usernames
 20.times do 
     User.create(username: Faker::Name.name, password: 'password')
-    
 end
 
-#create 25 random comments
+#create 80 random comments
 80.times do 
     Comment.create( 
         comment: Faker::Lorem.paragraph(sentence_count: 3),
@@ -22,8 +21,7 @@ end
     )
 end
 
-
-#748 lines of dad jokes 🥴
+#99 lines of dad jokes 🥴
 Joke.create(joke: "I'm tired of following my dreams. I'm just going to ask them where they are going and meet up with them later.")
 Joke.create(joke: "Did you hear about the guy whose whole left side was cut off? He's all right now.")
 Joke.create(joke: "Why didn't the skeleton cross the road? Because he had no guts.")
